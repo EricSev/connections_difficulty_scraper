@@ -1,0 +1,51 @@
+name: Run Python Scraper Daily
+
+on:
+  schedule:
+    # Runs every day at 06:00 UTC (which is 1:00 AM EST, typically)
+    - cron: '0 6 * * *'
+  # Optional: also allow manual triggers
+  workflow_dispatch:
+
+jobs:
+  run-daily-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Check out your repository code
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      # 2) Set up Python
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # 3) Install dependencies
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          # If you have a requirements.txt, use this:
+          # pip install -r requirements.txt
+          #
+          # Otherwise, install your needed libraries individually, e.g.:
+          # pip install requests beautifulsoup4 ...
+
+      # 4) Run your Python script
+      - name: Run scraper
+        run: |
+          python connections_scraper.py
+          # If your script has a main() or needs arguments, adapt as needed
+
+      # 5) Commit & push updated CSV/JSON files
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Daily data update" || echo "No changes to commit"
+          git push
+        env:
+          # Ensures we can push back to the repo. GITHUB_TOKEN is provided automatically.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
