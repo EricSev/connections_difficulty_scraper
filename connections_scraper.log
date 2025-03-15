@@ -1,0 +1,10 @@
+2025-03-15 17:08:14,732 - INFO - Running daily data collection
+2025-03-15 17:08:14,732 - INFO - Attempting to collect score for 2025-03-15 (Puzzle #644) from https://www.nytimes.com/2025/03/15/crosswords/connections-companion-644.html
+2025-03-15 17:08:14,732 - INFO - Requesting URL: https://www.nytimes.com/2025/03/15/crosswords/connections-companion-644.html
+2025-03-15 17:08:14,782 - INFO - Found difficulty in strong tag: Today’s difficulty is 3.3 out of 5.
+2025-03-15 17:08:14,798 - INFO - Saved score for 2025-03-15 (Puzzle #644) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_daily.csv
+2025-03-15 17:08:14,799 - INFO - Updated latest JSON file with data for 2025-03-15
+2025-03-15 17:08:14,799 - WARNING - History file /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_history.csv does not exist, cannot update JSON history
+2025-03-15 17:08:14,799 - INFO - Saved score for 2025-03-15 (Puzzle #644) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_history.csv
+2025-03-15 17:08:14,799 - INFO - Updated history JSON file with 1 puzzles
+2025-03-15 17:08:14,799 - INFO - Successfully collected score for 2025-03-15: 3.3/5
