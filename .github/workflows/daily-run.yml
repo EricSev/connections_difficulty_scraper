@@ -35,7 +35,7 @@ jobs:
       # 4) Run your Python script
       - name: Run scraper
         run: |
-          python connections_history_scraper.py
+          python connections_scraper.py
           # If your script has a main() or needs arguments, adapt as needed
 
       # 5) Commit & push updated CSV/JSON files
