@@ -1,0 +1,30 @@
+name: Publish Data to GitHub Pages
+
+on:
+  push:
+    paths:
+      - 'data/connections_difficulty_history.json'
+    branches:
+      - main
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create gh-pages directory structure
+        run: |
+          mkdir -p public/data
+          cp data/connections_difficulty_history.json public/data/
+          # Add an index file so directory is browsable
+          echo '{"last_updated": "'$(date -u +"%Y-%m-%dT%H:%M:%SZ")'"}' > public/index.json
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          force_orphan: true
