@@ -2,8 +2,8 @@ name: Run Python Scraper Daily
 
 on:
   schedule:
-    # daily at 06:00 UTC
-    - cron: '0 6 * * *'
+    # daily at 08:00 UTC (1:00 AM MT)
+    - cron: '0 8 * * *'
   workflow_dispatch:
 
 jobs:
