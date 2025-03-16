@@ -13,3 +13,17 @@
 2025-03-16 06:19:29,209 - INFO - Requesting URL: https://www.nytimes.com/2025/03/16/crosswords/connections-companion-645.html
 2025-03-16 06:19:29,316 - ERROR - Error scraping https://www.nytimes.com/2025/03/16/crosswords/connections-companion-645.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2025/03/16/crosswords/connections-companion-645.html
 2025-03-16 06:19:29,316 - ERROR - Failed to collect score for 2025-03-16
+2025-03-16 11:21:31,713 - INFO - Running daily data collection
+2025-03-16 11:21:31,714 - INFO - Attempting to collect score for 2025-03-16 (Puzzle #645) from https://www.nytimes.com/2025/03/16/crosswords/connections-companion-645.html
+2025-03-16 11:21:31,714 - INFO - Requesting URL: https://www.nytimes.com/2025/03/16/crosswords/connections-companion-645.html
+2025-03-16 11:21:31,817 - INFO - Found difficulty in strong tag: Today’s difficulty is 2 out of 5.
+2025-03-16 11:21:31,877 - INFO - Saved score for 2025-03-16 (Puzzle #645) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_daily.csv
+2025-03-16 11:21:31,877 - INFO - Updated latest JSON file with data for 2025-03-16
+2025-03-16 11:21:31,881 - ERROR - Could not parse date '' in any known format. Skipping row.
+2025-03-16 11:21:31,881 - ERROR - Could not parse date '' in any known format. Skipping row.
+2025-03-16 11:21:31,883 - INFO - Updated history JSON file with 194 puzzles
+2025-03-16 11:21:31,885 - INFO - Saved score for 2025-03-16 (Puzzle #645) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_history.csv
+2025-03-16 11:21:31,889 - ERROR - Could not parse date '' in any known format. Skipping row.
+2025-03-16 11:21:31,889 - ERROR - Could not parse date '' in any known format. Skipping row.
+2025-03-16 11:21:31,890 - INFO - Updated history JSON file with 195 puzzles
+2025-03-16 11:21:31,890 - INFO - Successfully collected score for 2025-03-16: 2.0/5
