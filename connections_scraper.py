@@ -238,12 +238,26 @@ def update_json_latest(data_row):
         day = str(date_obj.day)
         year = date_obj.strftime("%Y")
         formatted_date = f"{month}/{day}/{year}"
+        
+    # Format the puzzle_date to match the requested format (M/D/YYYY)
+    puzzle_date_obj = datetime.strptime(data_row["puzzle_date"], "%Y-%m-%d")
+    # Handle Windows vs Unix platform differences for date formatting
+    try:
+        # Unix-style formatting (works on macOS and Linux)
+        formatted_puzzle_date = puzzle_date_obj.strftime("%-m/%-d/%Y")
+    except ValueError:
+        # Windows alternative (remove leading zeros manually)
+        month = str(puzzle_date_obj.month)
+        day = str(puzzle_date_obj.day)
+        year = puzzle_date_obj.strftime("%Y")
+        formatted_puzzle_date = f"{month}/{day}/{year}"
 
     # Create the JSON structure
     json_data = {
         "puzzles": [
             {
                 "date": formatted_date,
+                "puzzle_date": formatted_puzzle_date,
                 "day": data_row["day"],
                 "month": int(data_row["month"]),
                 "puzzle_number": int(data_row["puzzle_number"]),
@@ -262,7 +276,7 @@ def update_json_latest(data_row):
     with open(LATEST_JSON, "w") as json_file:
         json.dump(json_data, json_file, indent=2)
 
-    logger.info(f"Updated latest JSON file with data for {data_row['date']}")
+    logger.info(f"Updated latest JSON file with data for {data_row['date']} (Puzzle Date: {data_row['puzzle_date']})")
 
 
 def update_json_latest_from_csv():
@@ -371,26 +385,47 @@ def update_json_history():
                             f"Could not parse date '{original_date}' in any known format. Skipping row."
                         )
                         continue
+                        
+                    # Calculate puzzle date (companion date + 1 day)
+                    puzzle_date_obj = date_obj + timedelta(days=1)
+                    
+                    # Handle puzzle_date field - if it exists in the row use it, otherwise calculate it
+                    if "puzzle_date" in row:
+                        puzzle_date_str = row["puzzle_date"]
+                        # Try to parse it to ensure it's valid
+                        for fmt in date_formats:
+                            try:
+                                puzzle_date_obj = datetime.strptime(puzzle_date_str, fmt)
+                                break
+                            except ValueError:
+                                continue
+                    else:
+                        # If puzzle_date doesn't exist in the CSV, calculate it
+                        puzzle_date_obj = date_obj + timedelta(days=1)
 
-                    # Format the date for display (M/D/YYYY)
+                    # Format the dates for display (M/D/YYYY)
                     try:
                         # Unix-style formatting (works on macOS and Linux)
                         formatted_date = date_obj.strftime("%-m/%-d/%Y")
+                        formatted_puzzle_date = puzzle_date_obj.strftime("%-m/%-d/%Y")
                     except ValueError:
                         # Windows alternative
-                        month = str(date_obj.month)
-                        day = str(date_obj.day)
-                        year = date_obj.strftime("%Y")
-                        formatted_date = f"{month}/{day}/{year}"
+                        formatted_date = f"{date_obj.month}/{date_obj.day}/{date_obj.year}"
+                        formatted_puzzle_date = f"{puzzle_date_obj.month}/{puzzle_date_obj.day}/{puzzle_date_obj.year}"
 
                     # Convert ISO date for sorting
                     sort_date = date_obj.strftime("%Y-%m-%d")
 
+                    # Get day and month based on puzzle_date
+                    day_of_week = puzzle_date_obj.strftime("%A")
+                    month_number = puzzle_date_obj.month
+
                     puzzles.append(
                         {
                             "date": formatted_date,  # Formatted for display (M/D/YYYY)
-                            "day": row["day"],
-                            "month": int(row["month"]),
+                            "puzzle_date": formatted_puzzle_date,  # Puzzle date (companion date + 1 day)
+                            "day": day_of_week,  # Based on puzzle_date
+                            "month": month_number,  # Based on puzzle_date
                             "puzzle_number": int(row["puzzle_number"]),
                             "difficulty_score": float(row["difficulty_score"]),
                             "max_score": int(row["max_score"]),
@@ -429,16 +464,20 @@ def update_json_history():
 
     except Exception as e:
         logger.error(f"Error updating history JSON file: {e}")
-
-
 def save_score_to_csv(date_str, puzzle_number, difficulty_score, max_score, file_path):
-    """Save score to CSV file with additional day and month columns."""
+    """Save score to CSV file with additional day, month, and puzzle_date columns."""
     file_exists = os.path.exists(file_path)
 
     # Parse the date string to extract day and month
     date_obj = datetime.strptime(date_str, "%Y-%m-%d")
-    day_of_week = date_obj.strftime("%A")  # Full day name (e.g., "Monday")
-    month_number = date_obj.month  # Month as a number (1-12)
+    
+    # Calculate puzzle_date (one day after the companion date)
+    puzzle_date_obj = date_obj + timedelta(days=1)
+    puzzle_date_str = puzzle_date_obj.strftime("%Y-%m-%d")
+    
+    # Get day of week and month for the puzzle date (not the companion date)
+    day_of_week = puzzle_date_obj.strftime("%A")  # Full day name (e.g., "Monday")
+    month_number = puzzle_date_obj.month  # Month as a number (1-12)
 
     # Check for duplicates if file exists
     duplicate_found = False
@@ -482,6 +521,7 @@ def save_score_to_csv(date_str, puzzle_number, difficulty_score, max_score, file
     if not duplicate_found:
         row_data = {
             "date": date_str,
+            "puzzle_date": puzzle_date_str,
             "day": day_of_week,
             "month": month_number,
             "puzzle_number": puzzle_number,
@@ -494,6 +534,7 @@ def save_score_to_csv(date_str, puzzle_number, difficulty_score, max_score, file
             with open(file_path, "a", newline="") as csvfile:
                 fieldnames = [
                     "date",
+                    "puzzle_date",
                     "day",
                     "month",
                     "puzzle_number",
@@ -507,6 +548,7 @@ def save_score_to_csv(date_str, puzzle_number, difficulty_score, max_score, file
             with open(file_path, "w", newline="") as csvfile:
                 fieldnames = [
                     "date",
+                    "puzzle_date",
                     "day",
                     "month",
                     "puzzle_number",
@@ -518,7 +560,7 @@ def save_score_to_csv(date_str, puzzle_number, difficulty_score, max_score, file
                 writer.writerow(row_data)
 
         logger.info(
-            f"Saved score for {date_str} (Puzzle #{puzzle_number}) to {file_path}"
+            f"Saved score for {date_str} (Puzzle #{puzzle_number}, Puzzle Date: {puzzle_date_str}) to {file_path}"
         )
 
         # Update JSON files after adding to CSV
@@ -530,7 +572,6 @@ def save_score_to_csv(date_str, puzzle_number, difficulty_score, max_score, file
     elif file_path == DAILY_FILE:
         # Even if we didn't add a new row, ensure JSON latest reflects most recent date
         update_json_latest_from_csv()
-
 
 def collect_daily_score():
     """Collect today's difficulty score."""
@@ -688,7 +729,7 @@ def collect_historical_scores(
 
 def migrate_existing_csv_files():
     """
-    Migrate existing CSV files to include day and month columns.
+    Migrate existing CSV files to include day, month, and puzzle_date columns.
     This function reads the existing CSV files, adds the new columns,
     and writes back to the same file.
     """
@@ -697,29 +738,43 @@ def migrate_existing_csv_files():
             logger.info(f"File {file_path} does not exist, no migration needed.")
             continue
 
-        logger.info(f"Migrating {file_path} to include day and month columns.")
+        logger.info(f"Migrating {file_path} to include day, month, and puzzle_date columns.")
 
         # Read the existing file
         with open(file_path, "r", newline="") as csvfile:
             reader = csv.DictReader(csvfile)
             rows = list(reader)
 
-            # Check if day and month columns already exist
-            if "day" in reader.fieldnames and "month" in reader.fieldnames:
-                logger.info(f"File {file_path} already has day and month columns.")
+            # Check if day, month, and puzzle_date columns already exist
+            need_migration = False
+            if "day" not in reader.fieldnames or "month" not in reader.fieldnames:
+                need_migration = True
+            
+            if "puzzle_date" not in reader.fieldnames:
+                need_migration = True
+                
+            if not need_migration:
+                logger.info(f"File {file_path} already has all required columns.")
                 continue
 
-            # Process each row to add day and month
+            # Process each row to add day, month, and puzzle_date
             updated_rows = []
             for row in rows:
                 try:
                     date_obj = datetime.strptime(row["date"], "%Y-%m-%d")
-                    day_of_week = date_obj.strftime("%A")
-                    month_number = date_obj.month
+                    
+                    # Calculate puzzle_date (one day after the companion date)
+                    puzzle_date_obj = date_obj + timedelta(days=1)
+                    puzzle_date_str = puzzle_date_obj.strftime("%Y-%m-%d")
+                    
+                    # Calculate day and month based on puzzle_date
+                    day_of_week = puzzle_date_obj.strftime("%A")
+                    month_number = puzzle_date_obj.month
 
                     # Create updated row with new columns
                     updated_row = {
                         "date": row["date"],
+                        "puzzle_date": puzzle_date_str,
                         "day": day_of_week,
                         "month": month_number,
                         "puzzle_number": row["puzzle_number"],
@@ -736,6 +791,7 @@ def migrate_existing_csv_files():
         with open(file_path, "w", newline="") as csvfile:
             fieldnames = [
                 "date",
+                "puzzle_date",
                 "day",
                 "month",
                 "puzzle_number",
