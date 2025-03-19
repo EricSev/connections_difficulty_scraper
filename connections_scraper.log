@@ -60,3 +60,8 @@
 2025-03-18 10:43:57,056 - ERROR - Could not parse date '' in any known format. Skipping row.
 2025-03-18 10:43:57,058 - INFO - Updated history JSON file with 197 puzzles
 2025-03-18 10:43:57,058 - INFO - Successfully collected score for 2025-03-18: 3.0/5
+2025-03-19 10:44:00,321 - INFO - Running daily data collection
+2025-03-19 10:44:00,321 - INFO - Attempting to collect score for 2025-03-19 (Puzzle #648) from https://www.nytimes.com/2025/03/19/crosswords/connections-companion-648.html
+2025-03-19 10:44:00,321 - INFO - Requesting URL: https://www.nytimes.com/2025/03/19/crosswords/connections-companion-648.html
+2025-03-19 10:44:00,342 - ERROR - Error scraping https://www.nytimes.com/2025/03/19/crosswords/connections-companion-648.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2025/03/19/crosswords/connections-companion-648.html
+2025-03-19 10:44:00,342 - ERROR - Failed to collect score for 2025-03-19
