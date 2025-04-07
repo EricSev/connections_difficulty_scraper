@@ -235,3 +235,8 @@
 2025-04-06 10:41:43,714 - INFO - Requesting URL: https://www.nytimes.com/2025/04/06/crosswords/connections-companion-666.html
 2025-04-06 10:41:43,792 - ERROR - Error scraping https://www.nytimes.com/2025/04/06/crosswords/connections-companion-666.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2025/04/06/crosswords/connections-companion-666.html
 2025-04-06 10:41:43,792 - ERROR - Failed to collect score for 2025-04-06
+2025-04-07 10:45:31,170 - INFO - Running daily data collection
+2025-04-07 10:45:31,170 - INFO - Attempting to collect score for 2025-04-07 (Puzzle #667) from https://www.nytimes.com/2025/04/07/crosswords/connections-companion-667.html
+2025-04-07 10:45:31,170 - INFO - Requesting URL: https://www.nytimes.com/2025/04/07/crosswords/connections-companion-667.html
+2025-04-07 10:45:31,213 - ERROR - Error scraping https://www.nytimes.com/2025/04/07/crosswords/connections-companion-667.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2025/04/07/crosswords/connections-companion-667.html
+2025-04-07 10:45:31,213 - ERROR - Failed to collect score for 2025-04-07
