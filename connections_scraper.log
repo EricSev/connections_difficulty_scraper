@@ -705,3 +705,13 @@
 2025-05-27 10:47:05,177 - INFO - Requesting URL: https://www.nytimes.com/2025/05/27/crosswords/connections-companion-717.html
 2025-05-27 10:47:05,248 - ERROR - Error scraping https://www.nytimes.com/2025/05/27/crosswords/connections-companion-717.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2025/05/27/crosswords/connections-companion-717.html
 2025-05-27 10:47:05,248 - ERROR - Failed to collect score for 2025-05-27
+2025-05-28 10:47:09,709 - INFO - Running daily data collection
+2025-05-28 10:47:09,709 - INFO - Attempting to collect score for 2025-05-28 (Puzzle #718) from https://www.nytimes.com/2025/05/28/crosswords/connections-companion-718.html
+2025-05-28 10:47:09,709 - INFO - Requesting URL: https://www.nytimes.com/2025/05/28/crosswords/connections-companion-718.html
+2025-05-28 10:47:09,869 - INFO - Found difficulty in strong tag: Today’s difficulty is 2 out of 5.
+2025-05-28 10:47:09,877 - INFO - Saved score for 2025-05-28 (Puzzle #718, Puzzle Date: 2025-05-29) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_daily.csv
+2025-05-28 10:47:09,878 - INFO - Updated latest JSON file with data for 2025-05-28 (Puzzle Date: 2025-05-29)
+2025-05-28 10:47:09,888 - INFO - Updated history JSON file with 255 puzzles
+2025-05-28 10:47:09,891 - INFO - Saved score for 2025-05-28 (Puzzle #718, Puzzle Date: 2025-05-29) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_history.csv
+2025-05-28 10:47:09,901 - INFO - Updated history JSON file with 256 puzzles
+2025-05-28 10:47:09,902 - INFO - Successfully collected score for 2025-05-28: 2.0/5
