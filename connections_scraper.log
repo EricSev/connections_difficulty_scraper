@@ -1060,3 +1060,8 @@
 2025-07-08 10:47:55,436 - INFO - Saved score for 2025-07-08 (Puzzle #759, Puzzle Date: 2025-07-09) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_history.csv
 2025-07-08 10:47:55,447 - INFO - Updated history JSON file with 284 puzzles
 2025-07-08 10:47:55,447 - INFO - Successfully collected score for 2025-07-08: 2.5/5
+2025-07-09 10:48:25,308 - INFO - Running daily data collection
+2025-07-09 10:48:25,308 - INFO - Attempting to collect score for 2025-07-09 (Puzzle #760) from https://www.nytimes.com/2025/07/09/crosswords/connections-companion-760.html
+2025-07-09 10:48:25,308 - INFO - Requesting URL: https://www.nytimes.com/2025/07/09/crosswords/connections-companion-760.html
+2025-07-09 10:48:25,477 - ERROR - Error scraping https://www.nytimes.com/2025/07/09/crosswords/connections-companion-760.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2025/07/09/crosswords/connections-companion-760.html
+2025-07-09 10:48:25,477 - ERROR - Failed to collect score for 2025-07-09
