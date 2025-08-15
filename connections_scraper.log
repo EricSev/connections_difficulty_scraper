@@ -1365,3 +1365,13 @@
 2025-08-14 10:48:35,371 - INFO - Saved score for 2025-08-14 (Puzzle #796, Puzzle Date: 2025-08-15) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_history.csv
 2025-08-14 10:48:35,384 - INFO - Updated history JSON file with 308 puzzles
 2025-08-14 10:48:35,384 - INFO - Successfully collected score for 2025-08-14: 2.5/5
+2025-08-15 10:46:43,123 - INFO - Running daily data collection
+2025-08-15 10:46:43,123 - INFO - Attempting to collect score for 2025-08-15 (Puzzle #797) from https://www.nytimes.com/2025/08/15/crosswords/connections-companion-797.html
+2025-08-15 10:46:43,123 - INFO - Requesting URL: https://www.nytimes.com/2025/08/15/crosswords/connections-companion-797.html
+2025-08-15 10:46:43,396 - INFO - Found difficulty in strong tag: Today’s difficulty is 2.2 out of 5.
+2025-08-15 10:46:43,404 - INFO - Saved score for 2025-08-15 (Puzzle #797, Puzzle Date: 2025-08-16) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_daily.csv
+2025-08-15 10:46:43,405 - INFO - Updated latest JSON file with data for 2025-08-15 (Puzzle Date: 2025-08-16)
+2025-08-15 10:46:43,417 - INFO - Updated history JSON file with 308 puzzles
+2025-08-15 10:46:43,420 - INFO - Saved score for 2025-08-15 (Puzzle #797, Puzzle Date: 2025-08-16) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_history.csv
+2025-08-15 10:46:43,432 - INFO - Updated history JSON file with 309 puzzles
+2025-08-15 10:46:43,432 - INFO - Successfully collected score for 2025-08-15: 2.2/5
