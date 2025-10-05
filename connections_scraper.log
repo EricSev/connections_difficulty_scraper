@@ -1760,3 +1760,13 @@
 2025-10-04 10:40:15,166 - INFO - Requesting URL: https://www.nytimes.com/2025/10/04/crosswords/connections-companion-847.html
 2025-10-04 10:40:15,271 - ERROR - Error scraping https://www.nytimes.com/2025/10/04/crosswords/connections-companion-847.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2025/10/04/crosswords/connections-companion-847.html
 2025-10-04 10:40:15,272 - ERROR - Failed to collect score for 2025-10-04
+2025-10-05 10:39:58,933 - INFO - Running daily data collection
+2025-10-05 10:39:58,933 - INFO - Attempting to collect score for 2025-10-05 (Puzzle #848) from https://www.nytimes.com/2025/10/05/crosswords/connections-companion-848.html
+2025-10-05 10:39:58,933 - INFO - Requesting URL: https://www.nytimes.com/2025/10/05/crosswords/connections-companion-848.html
+2025-10-05 10:39:59,124 - INFO - Found difficulty in strong tag: Today’s difficulty is 2.5 out of 5.
+2025-10-05 10:39:59,143 - INFO - Saved score for 2025-10-05 (Puzzle #848, Puzzle Date: 2025-10-06) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_daily.csv
+2025-10-05 10:39:59,143 - INFO - Updated latest JSON file with data for 2025-10-05 (Puzzle Date: 2025-10-06)
+2025-10-05 10:39:59,156 - INFO - Updated history JSON file with 336 puzzles
+2025-10-05 10:39:59,159 - INFO - Saved score for 2025-10-05 (Puzzle #848, Puzzle Date: 2025-10-06) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_history.csv
+2025-10-05 10:39:59,172 - INFO - Updated history JSON file with 337 puzzles
+2025-10-05 10:39:59,172 - INFO - Successfully collected score for 2025-10-05: 2.5/5
