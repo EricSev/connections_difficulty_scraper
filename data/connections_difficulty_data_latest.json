@@ -1,17 +1,17 @@
 {
   "puzzles": [
     {
-      "date": "10/8/2025",
-      "puzzle_date": "10/9/2025",
-      "day": "Thursday",
+      "date": "10/9/2025",
+      "puzzle_date": "10/10/2025",
+      "day": "Friday",
       "month": 10,
-      "puzzle_number": 851,
+      "puzzle_number": 852,
       "difficulty_score": 2.8,
       "max_score": 5
     }
   ],
   "metadata": {
-    "last_updated": "2025-10-08",
+    "last_updated": "2025-10-09",
     "total_puzzles": 1,
     "source": "Connections Game Difficulty Data"
   }
