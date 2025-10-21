@@ -1895,3 +1895,8 @@
 2025-10-20 10:46:01,883 - INFO - Requesting URL: https://www.nytimes.com/2025/10/20/crosswords/connections-companion-863.html
 2025-10-20 10:46:02,005 - ERROR - Error scraping https://www.nytimes.com/2025/10/20/crosswords/connections-companion-863.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2025/10/20/crosswords/connections-companion-863.html
 2025-10-20 10:46:02,006 - ERROR - Failed to collect score for 2025-10-20
+2025-10-21 10:45:01,754 - INFO - Running daily data collection
+2025-10-21 10:45:01,755 - INFO - Attempting to collect score for 2025-10-21 (Puzzle #864) from https://www.nytimes.com/2025/10/21/crosswords/connections-companion-864.html
+2025-10-21 10:45:01,755 - INFO - Requesting URL: https://www.nytimes.com/2025/10/21/crosswords/connections-companion-864.html
+2025-10-21 10:45:01,802 - ERROR - Error scraping https://www.nytimes.com/2025/10/21/crosswords/connections-companion-864.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2025/10/21/crosswords/connections-companion-864.html
+2025-10-21 10:45:01,803 - ERROR - Failed to collect score for 2025-10-21
