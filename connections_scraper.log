@@ -1935,3 +1935,13 @@
 2025-10-26 10:41:22,961 - INFO - Saved score for 2025-10-26 (Puzzle #869, Puzzle Date: 2025-10-27) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_history.csv
 2025-10-26 10:41:22,975 - INFO - Updated history JSON file with 349 puzzles
 2025-10-26 10:41:22,975 - INFO - Successfully collected score for 2025-10-26: 2.3/5
+2025-10-27 10:47:11,083 - INFO - Running daily data collection
+2025-10-27 10:47:11,084 - INFO - Attempting to collect score for 2025-10-27 (Puzzle #870) from https://www.nytimes.com/2025/10/27/crosswords/connections-companion-870.html
+2025-10-27 10:47:11,084 - INFO - Requesting URL: https://www.nytimes.com/2025/10/27/crosswords/connections-companion-870.html
+2025-10-27 10:47:11,253 - INFO - Found difficulty in strong tag: Today’s difficulty is 2.3 out of 5.
+2025-10-27 10:47:11,324 - INFO - Saved score for 2025-10-27 (Puzzle #870, Puzzle Date: 2025-10-28) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_daily.csv
+2025-10-27 10:47:11,324 - INFO - Updated latest JSON file with data for 2025-10-27 (Puzzle Date: 2025-10-28)
+2025-10-27 10:47:11,338 - INFO - Updated history JSON file with 349 puzzles
+2025-10-27 10:47:11,341 - INFO - Saved score for 2025-10-27 (Puzzle #870, Puzzle Date: 2025-10-28) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_history.csv
+2025-10-27 10:47:11,354 - INFO - Updated history JSON file with 350 puzzles
+2025-10-27 10:47:11,354 - INFO - Successfully collected score for 2025-10-27: 2.3/5
