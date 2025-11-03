@@ -1980,3 +1980,8 @@
 2025-11-02 10:40:50,454 - INFO - Requesting URL: https://www.nytimes.com/2025/11/02/crosswords/connections-companion-876.html
 2025-11-02 10:40:50,754 - ERROR - Error scraping https://www.nytimes.com/2025/11/02/crosswords/connections-companion-876.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2025/11/02/crosswords/connections-companion-876.html
 2025-11-02 10:40:50,755 - ERROR - Failed to collect score for 2025-11-02
+2025-11-03 10:47:36,827 - INFO - Running daily data collection
+2025-11-03 10:47:36,827 - INFO - Attempting to collect score for 2025-11-03 (Puzzle #877) from https://www.nytimes.com/2025/11/03/crosswords/connections-companion-877.html
+2025-11-03 10:47:36,827 - INFO - Requesting URL: https://www.nytimes.com/2025/11/03/crosswords/connections-companion-877.html
+2025-11-03 10:47:36,877 - ERROR - Error scraping https://www.nytimes.com/2025/11/03/crosswords/connections-companion-877.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2025/11/03/crosswords/connections-companion-877.html
+2025-11-03 10:47:36,878 - ERROR - Failed to collect score for 2025-11-03
