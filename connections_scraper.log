@@ -2180,3 +2180,8 @@
 2025-12-12 10:48:49,882 - INFO - Requesting URL: https://www.nytimes.com/2025/12/12/crosswords/connections-companion-916.html
 2025-12-12 10:48:50,039 - ERROR - Error scraping https://www.nytimes.com/2025/12/12/crosswords/connections-companion-916.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2025/12/12/crosswords/connections-companion-916.html
 2025-12-12 10:48:50,040 - ERROR - Failed to collect score for 2025-12-12
+2025-12-13 10:43:29,696 - INFO - Running daily data collection
+2025-12-13 10:43:29,696 - INFO - Attempting to collect score for 2025-12-13 (Puzzle #917) from https://www.nytimes.com/2025/12/13/crosswords/connections-companion-917.html
+2025-12-13 10:43:29,696 - INFO - Requesting URL: https://www.nytimes.com/2025/12/13/crosswords/connections-companion-917.html
+2025-12-13 10:43:30,044 - ERROR - Error scraping https://www.nytimes.com/2025/12/13/crosswords/connections-companion-917.html: 404 Client Error: Not Found for url: https://www.nytimes.com/2025/12/13/crosswords/connections-companion-917.html
+2025-12-13 10:43:30,045 - ERROR - Failed to collect score for 2025-12-13
