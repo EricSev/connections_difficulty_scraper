@@ -2480,3 +2480,8 @@
 2026-02-06 11:07:59,767 - INFO - Requesting URL: https://www.nytimes.com/2026/02/06/crosswords/connections-companion-972.html
 2026-02-06 11:07:59,890 - ERROR - Error scraping https://www.nytimes.com/2026/02/06/crosswords/connections-companion-972.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2026/02/06/crosswords/connections-companion-972.html
 2026-02-06 11:07:59,891 - ERROR - Failed to collect score for 2026-02-06
+2026-02-07 10:54:14,339 - INFO - Running daily data collection
+2026-02-07 10:54:14,339 - INFO - Attempting to collect score for 2026-02-07 (Puzzle #973) from https://www.nytimes.com/2026/02/07/crosswords/connections-companion-973.html
+2026-02-07 10:54:14,339 - INFO - Requesting URL: https://www.nytimes.com/2026/02/07/crosswords/connections-companion-973.html
+2026-02-07 10:54:14,404 - ERROR - Error scraping https://www.nytimes.com/2026/02/07/crosswords/connections-companion-973.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2026/02/07/crosswords/connections-companion-973.html
+2026-02-07 10:54:14,405 - ERROR - Failed to collect score for 2026-02-07
