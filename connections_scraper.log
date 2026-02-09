@@ -2495,3 +2495,18 @@
 2026-02-09 11:25:40,273 - INFO - Requesting URL: https://www.nytimes.com/2026/02/09/crosswords/connections-companion-975.html
 2026-02-09 11:25:40,482 - ERROR - Error scraping https://www.nytimes.com/2026/02/09/crosswords/connections-companion-975.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2026/02/09/crosswords/connections-companion-975.html
 2026-02-09 11:25:40,483 - ERROR - Failed to collect score for 2026-02-09
+2026-02-09 10:53:08,469 - INFO - Collecting score for specific date: 2025-06-09 (Puzzle #730)
+2026-02-09 10:53:08,470 - INFO - Requesting URL: https://www.nytimes.com/2025/06/09/crosswords/connections-companion-730.html
+2026-02-09 10:53:09,435 - INFO - Found difficulty in strong tag: Today’s difficulty is 3 out of 5.
+2026-02-09 10:53:09,448 - INFO - Entry for 2025-06-09 (Puzzle #730) already exists in C:\Users\erics\OneDrive\VS Code\connections_difficulty_scraper\data\connections_difficulty_history.csv, skipping
+2026-02-09 10:53:09,449 - INFO - Successfully collected score for 2025-06-09: 3.0/5
+2026-02-09 10:57:07,137 - INFO - Collecting score for specific date: 2025-06-09 (Puzzle #730)
+2026-02-09 10:57:07,138 - INFO - Requesting URL: https://www.nytimes.com/2025/06/09/crosswords/connections-companion-730.html
+2026-02-09 10:57:07,690 - INFO - Found difficulty in strong tag: Today’s difficulty is 3 out of 5.
+2026-02-09 10:57:07,693 - INFO - Entry for 2025-06-09 (Puzzle #730) already exists in C:\Users\erics\OneDrive\VS Code\connections_difficulty_scraper\data\connections_difficulty_history.csv, skipping
+2026-02-09 10:57:07,693 - INFO - Successfully collected score for 2025-06-09: 3.0/5
+2026-02-09 12:04:23,716 - INFO - Generating initial JSON files from existing CSV data
+2026-02-09 12:04:23,731 - INFO - Updated history JSON file with 355 puzzles
+2026-02-09 12:04:23,765 - INFO - Updated four-day files with 4 puzzles
+2026-02-09 12:04:23,768 - INFO - Updated latest JSON file with data for 2026-02-05 (Puzzle Date: 2026-02-06)
+2026-02-09 12:04:23,768 - INFO - Generated latest JSON file with data from 2026-02-05

@@ -24,6 +24,8 @@ DAILY_FILE = DATA_DIR / "connections_difficulty_daily.csv"
 # New JSON output files
 LATEST_JSON = DATA_DIR / "connections_difficulty_data_latest.json"
 HISTORY_JSON = DATA_DIR / "connections_difficulty_history.json"
+FOUR_DAY_JSON = DATA_DIR / "connections_difficulty_four_day.json"
+FOUR_DAY_CSV = DATA_DIR / "connections_difficulty_four_day.csv"
 
 # Ensure data directory exists
 DATA_DIR.mkdir(exist_ok=True)
@@ -464,6 +466,64 @@ def update_json_history():
 
     except Exception as e:
         logger.error(f"Error updating history JSON file: {e}")
+
+
+def update_json_four_days():
+    """
+    Update the four-day JSON and CSV files with the most recent 4 puzzles
+    from the history JSON file.
+    """
+    if not os.path.exists(HISTORY_JSON):
+        logger.warning(
+            f"History JSON file {HISTORY_JSON} does not exist, cannot update four-day files"
+        )
+        return
+
+    try:
+        # Read the full history JSON (already sorted newest-first)
+        with open(HISTORY_JSON, "r") as json_file:
+            history_data = json.load(json_file)
+
+        puzzles = history_data.get("puzzles", [])
+        four_day_puzzles = puzzles[:4]
+
+        # Write the four-day JSON file
+        json_data = {
+            "puzzles": four_day_puzzles,
+            "metadata": {
+                "last_updated": datetime.now().strftime("%Y-%m-%d"),
+                "total_puzzles": len(four_day_puzzles),
+                "source": "Connections Game Difficulty Data",
+            },
+        }
+
+        with open(FOUR_DAY_JSON, "w") as json_file:
+            json.dump(json_data, json_file, indent=2)
+
+        # Write the four-day CSV file
+        fieldnames = [
+            "date",
+            "puzzle_date",
+            "day",
+            "month",
+            "puzzle_number",
+            "difficulty_score",
+            "max_score",
+        ]
+        with open(FOUR_DAY_CSV, "w", newline="") as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            for puzzle in four_day_puzzles:
+                writer.writerow(puzzle)
+
+        logger.info(
+            f"Updated four-day files with {len(four_day_puzzles)} puzzles"
+        )
+
+    except Exception as e:
+        logger.error(f"Error updating four-day files: {e}")
+
+
 def save_score_to_csv(date_str, puzzle_number, difficulty_score, max_score, file_path):
     """Save score to CSV file with additional day, month, and puzzle_date columns."""
     file_exists = os.path.exists(file_path)
@@ -569,9 +629,14 @@ def save_score_to_csv(date_str, puzzle_number, difficulty_score, max_score, file
 
         # Always update the history JSON when adding to any CSV
         update_json_history()
+
+        # Update four-day files after daily collection
+        if file_path == DAILY_FILE:
+            update_json_four_days()
     elif file_path == DAILY_FILE:
         # Even if we didn't add a new row, ensure JSON latest reflects most recent date
         update_json_latest_from_csv()
+        update_json_four_days()
 
 def collect_daily_score():
     """Collect today's difficulty score."""
@@ -817,6 +882,9 @@ def generate_initial_json_files():
 
     # Generate history JSON from history CSV
     update_json_history()
+
+    # Generate four-day JSON and CSV from history JSON
+    update_json_four_days()
 
     # Generate latest JSON from daily CSV if it exists
     if os.path.exists(DAILY_FILE):
