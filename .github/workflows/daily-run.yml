@@ -24,7 +24,9 @@ jobs:
           pip install --upgrade pip
           pip install requests beautifulsoup4
 
-      - name: Run scraper
+      - name: Run scraper with Apify proxy
+        env:
+          APIFY_PROXY_PASSWORD: ${{ secrets.APIFY_PROXY_PASSWORD }}
         run: python connections_scraper.py
 
       - name: Commit and push changes
