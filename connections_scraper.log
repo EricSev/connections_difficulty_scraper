@@ -2531,3 +2531,14 @@
 2026-02-10 11:28:31,390 - INFO - Saved score for 2026-02-10 (Puzzle #976, Puzzle Date: 2026-02-11) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_history.csv
 2026-02-10 11:28:31,404 - INFO - Updated history JSON file with 357 puzzles
 2026-02-10 11:28:31,404 - INFO - Successfully collected score for 2026-02-10: 2.5/5
+2026-02-11 11:25:39,409 - INFO - Running daily data collection
+2026-02-11 11:25:39,409 - INFO - Attempting to collect score for 2026-02-11 (Puzzle #977) from https://www.nytimes.com/2026/02/11/crosswords/connections-companion-977.html
+2026-02-11 11:25:39,409 - INFO - Requesting URL: https://www.nytimes.com/2026/02/11/crosswords/connections-companion-977.html
+2026-02-11 11:25:39,987 - INFO - Found difficulty in strong tag: Today’s difficulty is 2.5 out of 5.
+2026-02-11 11:25:40,010 - INFO - Saved score for 2026-02-11 (Puzzle #977, Puzzle Date: 2026-02-12) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_daily.csv
+2026-02-11 11:25:40,010 - INFO - Updated latest JSON file with data for 2026-02-11 (Puzzle Date: 2026-02-12)
+2026-02-11 11:25:40,024 - INFO - Updated history JSON file with 357 puzzles
+2026-02-11 11:25:40,025 - INFO - Updated four-day files with 4 puzzles
+2026-02-11 11:25:40,028 - INFO - Saved score for 2026-02-11 (Puzzle #977, Puzzle Date: 2026-02-12) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_history.csv
+2026-02-11 11:25:40,042 - INFO - Updated history JSON file with 358 puzzles
+2026-02-11 11:25:40,042 - INFO - Successfully collected score for 2026-02-11: 2.5/5
