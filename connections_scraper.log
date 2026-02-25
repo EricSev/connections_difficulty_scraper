@@ -2649,3 +2649,8 @@
 2026-02-24 11:22:51,048 - INFO - Saved score for 2026-02-24 (Puzzle #990, Puzzle Date: 2026-02-25) to /home/runner/work/connections_difficulty_scraper/connections_difficulty_scraper/data/connections_difficulty_history.csv
 2026-02-24 11:22:51,063 - INFO - Updated history JSON file with 365 puzzles
 2026-02-24 11:22:51,063 - INFO - Successfully collected score for 2026-02-24: 2.3/5
+2026-02-25 11:23:16,915 - INFO - Running daily data collection
+2026-02-25 11:23:16,915 - INFO - Attempting to collect score for 2026-02-25 (Puzzle #991) from https://www.nytimes.com/2026/02/25/crosswords/connections-companion-991.html
+2026-02-25 11:23:16,915 - INFO - Requesting URL: https://www.nytimes.com/2026/02/25/crosswords/connections-companion-991.html
+2026-02-25 11:23:17,057 - ERROR - Error scraping https://www.nytimes.com/2026/02/25/crosswords/connections-companion-991.html: 403 Client Error: Forbidden for url: https://www.nytimes.com/2026/02/25/crosswords/connections-companion-991.html
+2026-02-25 11:23:17,057 - ERROR - Failed to collect score for 2026-02-25
