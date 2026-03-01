@@ -2669,3 +2669,8 @@
 2026-02-28 10:48:48,240 - INFO - Requesting URL: https://www.nytimes.com/2026/02/28/crosswords/connections-companion-994.html
 2026-02-28 10:48:48,650 - ERROR - Error scraping https://www.nytimes.com/2026/02/28/crosswords/connections-companion-994.html: 404 Client Error: Not Found for url: https://www.nytimes.com/2026/02/28/crosswords/connections-companion-994.html
 2026-02-28 10:48:48,651 - ERROR - Failed to collect score for 2026-02-28
+2026-03-01 10:51:25,171 - INFO - Running daily data collection
+2026-03-01 10:51:25,171 - INFO - Attempting to collect score for 2026-03-01 (Puzzle #995) from https://www.nytimes.com/2026/03/01/crosswords/connections-companion-995.html
+2026-03-01 10:51:25,171 - INFO - Requesting URL: https://www.nytimes.com/2026/03/01/crosswords/connections-companion-995.html
+2026-03-01 10:51:25,612 - ERROR - Error scraping https://www.nytimes.com/2026/03/01/crosswords/connections-companion-995.html: 404 Client Error: Not Found for url: https://www.nytimes.com/2026/03/01/crosswords/connections-companion-995.html
+2026-03-01 10:51:25,613 - ERROR - Failed to collect score for 2026-03-01
