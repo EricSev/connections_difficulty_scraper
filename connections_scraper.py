@@ -645,8 +645,9 @@ def save_score_to_csv(date_str, puzzle_number, difficulty_score, max_score, file
         # Always update the history JSON when adding to any CSV
         update_json_history()
 
-        # Update four-day files after daily collection
-        if file_path == DAILY_FILE:
+        # Update four-day files after history CSV is updated (not daily, since
+        # the history entry hasn't been written yet at that point)
+        if file_path == HISTORY_FILE:
             update_json_four_days()
     elif file_path == DAILY_FILE:
         # Even if we didn't add a new row, ensure JSON latest reflects most recent date
