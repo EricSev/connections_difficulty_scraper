@@ -1,0 +1,15 @@
+# Logs
+*.log
+
+# Debug files
+debug_*.html
+scraper_progress.txt
+
+# Environment
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo

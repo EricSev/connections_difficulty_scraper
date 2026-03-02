@@ -2,39 +2,46 @@ name: Run Python Scraper Daily
 
 on:
   schedule:
-    # daily at 10:30 UTC (6:30 AM ET during EDT)
-    - cron: '30 10 * * *'
+    # daily at 18:00 UTC (1:00 PM ET during EST, 2:00 PM during EDT)
+    - cron: '00 18 * * *'
   workflow_dispatch:
 
 jobs:
   run-daily-script:
     runs-on: ubuntu-latest
+    timeout-minutes: 300
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python 3.x
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      # This step installs dependencies like requests and BeautifulSoup
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install requests beautifulsoup4
+          pip install -r requirements.txt
 
       - name: Run scraper with Apify proxy
         env:
           APIFY_PROXY_PASSWORD: ${{ secrets.APIFY_PROXY_PASSWORD }}
-        run: python connections_scraper.py
+        run: python connections_scraper.py --retries 3 --retry-delay 7200
 
       - name: Commit and push changes
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add .
-          git commit -m "Daily data update" || echo "No changes to commit"
-          git push
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Daily data update"
+            git pull --rebase
+            git push
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

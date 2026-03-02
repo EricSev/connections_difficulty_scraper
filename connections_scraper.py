@@ -4,6 +4,8 @@ import re
 import csv
 import os
 import json
+import random
+import time
 from datetime import datetime, timedelta, date
 import logging
 from pathlib import Path
@@ -45,6 +47,17 @@ HEADERS = {
     "Cache-Control": "max-age=0",
 }
 
+# Proxy configuration -- set from environment or CLI argument
+PROXY_URL = None
+
+
+def _build_proxy_url():
+    """Build proxy URL from APIFY_PROXY_PASSWORD environment variable, if set."""
+    password = os.environ.get("APIFY_PROXY_PASSWORD")
+    if password:
+        return f"http://auto:{password}@proxy.apify.com:8000"
+    return None
+
 
 def get_random_user_agent():
     """Return a random user agent string to rotate between requests."""
@@ -57,8 +70,6 @@ def get_random_user_agent():
         "Mozilla/5.0 (iPad; CPU OS 17_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3 Mobile/15E148 Safari/604.1",
         "Mozilla/5.0 (iPhone; CPU iPhone OS 17_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3 Mobile/15E148 Safari/604.1",
     ]
-    import random
-
     return random.choice(user_agents)
 
 
@@ -115,13 +126,17 @@ def scrape_difficulty_score(url, rotate_user_agent=True):
             logger.debug(f"Using user agent: {headers['User-Agent']}")
 
         # Add some randomness to request parameters to mimic human behavior
-        import random
-
         # Sometimes browsers include a referer
         if random.random() < 0.7:  # 70% of the time
             headers["Referer"] = "https://www.nytimes.com/crosswords"
 
-        response = requests.get(url, headers=headers, timeout=10)
+        # Build proxies dict if a proxy URL is configured
+        proxies = None
+        if PROXY_URL:
+            proxies = {"http": PROXY_URL, "https": PROXY_URL}
+            logger.debug(f"Using proxy: {PROXY_URL.split('@')[1] if '@' in PROXY_URL else PROXY_URL}")
+
+        response = requests.get(url, headers=headers, timeout=30, proxies=proxies)
         response.raise_for_status()
 
         # Save HTML content for debugging (uncomment if needed)
@@ -638,8 +653,13 @@ def save_score_to_csv(date_str, puzzle_number, difficulty_score, max_score, file
         update_json_latest_from_csv()
         update_json_four_days()
 
-def collect_daily_score():
-    """Collect today's difficulty score."""
+def collect_daily_score(max_retries=1, retry_delay_seconds=7200):
+    """Collect today's difficulty score with optional retry logic.
+
+    Args:
+        max_retries (int): Maximum number of attempts (default 1 = no retry).
+        retry_delay_seconds (int): Seconds to wait between retries (default 7200 = 2 hours).
+    """
     today = date.today()
     formatted_date = today.strftime("%Y-%m-%d")
 
@@ -649,25 +669,38 @@ def collect_daily_score():
     # Get the URL for today's Connections Companion
     url = get_companion_url_for_date(today)
 
-    logger.info(
-        f"Attempting to collect score for {formatted_date} (Puzzle #{puzzle_number}) from {url}"
-    )
-
-    difficulty_score, max_score = scrape_difficulty_score(url)
-
-    if difficulty_score is not None:
-        save_score_to_csv(
-            formatted_date, puzzle_number, difficulty_score, max_score, DAILY_FILE
-        )
-        # Also append to the history file
-        save_score_to_csv(
-            formatted_date, puzzle_number, difficulty_score, max_score, HISTORY_FILE
-        )
+    for attempt in range(1, max_retries + 1):
         logger.info(
-            f"Successfully collected score for {formatted_date}: {difficulty_score}/{max_score}"
+            f"Attempt {attempt}/{max_retries}: Collecting score for {formatted_date} "
+            f"(Puzzle #{puzzle_number}) from {url}"
         )
-    else:
-        logger.error(f"Failed to collect score for {formatted_date}")
+
+        difficulty_score, max_score = scrape_difficulty_score(url)
+
+        if difficulty_score is not None:
+            save_score_to_csv(
+                formatted_date, puzzle_number, difficulty_score, max_score, DAILY_FILE
+            )
+            # Also append to the history file
+            save_score_to_csv(
+                formatted_date, puzzle_number, difficulty_score, max_score, HISTORY_FILE
+            )
+            logger.info(
+                f"Successfully collected score for {formatted_date}: {difficulty_score}/{max_score}"
+            )
+            return
+
+        # Failed this attempt
+        if attempt < max_retries:
+            logger.warning(
+                f"Attempt {attempt}/{max_retries} failed for {formatted_date}. "
+                f"Retrying in {retry_delay_seconds} seconds ({retry_delay_seconds / 3600:.1f} hours)..."
+            )
+            time.sleep(retry_delay_seconds)
+        else:
+            logger.error(
+                f"All {max_retries} attempts failed to collect score for {formatted_date}"
+            )
 
 
 def collect_historical_scores(
@@ -684,9 +717,6 @@ def collect_historical_scores(
         batch_size (int, optional): Number of requests after which to take a longer break. Defaults to 10.
         cooldown (int, optional): Time in seconds to pause after each batch. Defaults to 60.
     """
-    import random
-    import time
-
     logger.info("Starting collection of historical scores")
 
     # Define the date range for historical data
@@ -965,6 +995,24 @@ def main():
         "--save-html", action="store_true", help="Save HTML content for debugging"
     )
     parser.add_argument(
+        "--proxy",
+        type=str,
+        help="Proxy URL to use for requests (overrides APIFY_PROXY_PASSWORD env var). "
+             "Example: http://user:pass@proxy.example.com:8000",
+    )
+    parser.add_argument(
+        "--retries",
+        type=int,
+        default=1,
+        help="Number of attempts for daily collection (default: 1, no retry)",
+    )
+    parser.add_argument(
+        "--retry-delay",
+        type=int,
+        default=7200,
+        help="Seconds to wait between retry attempts (default: 7200 = 2 hours)",
+    )
+    parser.add_argument(
         "--migrate",
         action="store_true",
         help="Migrate existing CSV files to include day and month columns",
@@ -979,6 +1027,18 @@ def main():
     if args.debug:
         logger.setLevel(logging.DEBUG)
         logger.info("Debug mode enabled")
+
+    # Configure proxy: CLI argument takes precedence over environment variable
+    global PROXY_URL
+    if args.proxy:
+        PROXY_URL = args.proxy
+        logger.info("Using CLI-specified proxy")
+    else:
+        PROXY_URL = _build_proxy_url()
+        if PROXY_URL:
+            logger.info("Using Apify proxy from APIFY_PROXY_PASSWORD environment variable")
+        else:
+            logger.info("No proxy configured -- using direct connection")
 
     # Update user agent if specified
     if args.user_agent:
@@ -1018,7 +1078,8 @@ def main():
 
                 # If save-html flag is set, save the HTML content for debugging
                 if args.save_html:
-                    response = requests.get(url, headers=HEADERS)
+                    proxies = {"http": PROXY_URL, "https": PROXY_URL} if PROXY_URL else None
+                    response = requests.get(url, headers=HEADERS, timeout=30, proxies=proxies)
                     with open(f"debug_{args.date}.html", "w", encoding="utf-8") as f:
                         f.write(response.text)
                     logger.info(f"Saved HTML content to debug_{args.date}.html")
@@ -1057,7 +1118,10 @@ def main():
         )
     else:
         logger.info("Running daily data collection")
-        collect_daily_score()
+        collect_daily_score(
+            max_retries=args.retries,
+            retry_delay_seconds=args.retry_delay,
+        )
 
 
 if __name__ == "__main__":
