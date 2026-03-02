@@ -1,6 +1,96 @@
 {
   "puzzles": [
     {
+      "date": "3/2/2026",
+      "puzzle_date": "3/3/2026",
+      "day": "Tuesday",
+      "month": 3,
+      "puzzle_number": 996,
+      "difficulty_score": 2.3,
+      "max_score": 5
+    },
+    {
+      "date": "2/24/2026",
+      "puzzle_date": "2/25/2026",
+      "day": "Wednesday",
+      "month": 2,
+      "puzzle_number": 990,
+      "difficulty_score": 2.3,
+      "max_score": 5
+    },
+    {
+      "date": "2/19/2026",
+      "puzzle_date": "2/20/2026",
+      "day": "Friday",
+      "month": 2,
+      "puzzle_number": 985,
+      "difficulty_score": 3.5,
+      "max_score": 5
+    },
+    {
+      "date": "2/18/2026",
+      "puzzle_date": "2/19/2026",
+      "day": "Thursday",
+      "month": 2,
+      "puzzle_number": 984,
+      "difficulty_score": 1.5,
+      "max_score": 5
+    },
+    {
+      "date": "2/17/2026",
+      "puzzle_date": "2/18/2026",
+      "day": "Wednesday",
+      "month": 2,
+      "puzzle_number": 983,
+      "difficulty_score": 2.3,
+      "max_score": 5
+    },
+    {
+      "date": "2/16/2026",
+      "puzzle_date": "2/17/2026",
+      "day": "Tuesday",
+      "month": 2,
+      "puzzle_number": 982,
+      "difficulty_score": 2.8,
+      "max_score": 5
+    },
+    {
+      "date": "2/13/2026",
+      "puzzle_date": "2/14/2026",
+      "day": "Saturday",
+      "month": 2,
+      "puzzle_number": 979,
+      "difficulty_score": 2.3,
+      "max_score": 5
+    },
+    {
+      "date": "2/12/2026",
+      "puzzle_date": "2/13/2026",
+      "day": "Friday",
+      "month": 2,
+      "puzzle_number": 978,
+      "difficulty_score": 2.4,
+      "max_score": 5
+    },
+    {
+      "date": "2/11/2026",
+      "puzzle_date": "2/12/2026",
+      "day": "Thursday",
+      "month": 2,
+      "puzzle_number": 977,
+      "difficulty_score": 2.5,
+      "max_score": 5
+    },
+    {
+      "date": "2/10/2026",
+      "puzzle_date": "2/11/2026",
+      "day": "Wednesday",
+      "month": 2,
+      "puzzle_number": 976,
+      "difficulty_score": 2.5,
+      "max_score": 5
+    },
+    {
       "date": "2/9/2026",
       "puzzle_date": "2/10/2026",
       "day": "Tuesday",
@@ -3206,8 +3296,8 @@
     }
   ],
   "metadata": {
-    "last_updated": "2026-02-09",
-    "total_puzzles": 356,
+    "last_updated": "2026-03-02",
+    "total_puzzles": 366,
     "source": "Connections Game Difficulty Data"
   }
 }
