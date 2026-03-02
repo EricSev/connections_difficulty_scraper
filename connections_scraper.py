@@ -9,6 +9,9 @@ import time
 from datetime import datetime, timedelta, date
 import logging
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Set up logging
 logging.basicConfig(
@@ -1023,6 +1026,11 @@ def main():
         action="store_true",
         help="Generate JSON files from existing CSV data",
     )
+    parser.add_argument(
+        "--regenerate-four-day",
+        action="store_true",
+        help="Regenerate only the four-day JSON and CSV files from history data",
+    )
     args = parser.parse_args()
 
     if args.debug:
@@ -1049,6 +1057,11 @@ def main():
     # Generate initial JSON files if requested
     if args.generate_json:
         generate_initial_json_files()
+        return
+
+    # Regenerate only the four-day files if requested
+    if args.regenerate_four_day:
+        update_json_four_days()
         return
 
     # Migrate existing CSV files if requested
