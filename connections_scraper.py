@@ -54,11 +54,16 @@ HEADERS = {
 PROXY_URL = None
 
 
-def _build_proxy_url():
-    """Build proxy URL from APIFY_PROXY_PASSWORD environment variable, if set."""
+def _build_proxy_url(group=None):
+    """Build proxy URL from APIFY_PROXY_PASSWORD environment variable, if set.
+
+    Args:
+        group: Apify proxy group (e.g., 'RESIDENTIAL'). Defaults to 'auto' (datacenter).
+    """
     password = os.environ.get("APIFY_PROXY_PASSWORD")
     if password:
-        return f"http://auto:{password}@proxy.apify.com:8000"
+        username = f"groups-{group}" if group else "auto"
+        return f"http://{username}:{password}@proxy.apify.com:8000"
     return None
 
 
@@ -1005,6 +1010,11 @@ def main():
              "Example: http://user:pass@proxy.example.com:8000",
     )
     parser.add_argument(
+        "--proxy-group",
+        type=str,
+        help="Apify proxy group to use (e.g., RESIDENTIAL). Defaults to auto/datacenter.",
+    )
+    parser.add_argument(
         "--retries",
         type=int,
         default=1,
@@ -1043,9 +1053,10 @@ def main():
         PROXY_URL = args.proxy
         logger.info("Using CLI-specified proxy")
     else:
-        PROXY_URL = _build_proxy_url()
+        PROXY_URL = _build_proxy_url(group=args.proxy_group)
         if PROXY_URL:
-            logger.info("Using Apify proxy from APIFY_PROXY_PASSWORD environment variable")
+            group_label = args.proxy_group or "auto/datacenter"
+            logger.info(f"Using Apify proxy ({group_label}) from APIFY_PROXY_PASSWORD environment variable")
         else:
             logger.info("No proxy configured -- using direct connection")
 

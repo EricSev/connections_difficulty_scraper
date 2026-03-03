@@ -10,12 +10,93 @@
       "max_score": 5
     },
     {
+      "date": "3/1/2026",
+      "puzzle_date": "3/2/2026",
+      "day": "Monday",
+      "month": 3,
+      "puzzle_number": 995,
+      "difficulty_score": 1.3,
+      "max_score": 5
+    },
+    {
+      "date": "2/28/2026",
+      "puzzle_date": "3/1/2026",
+      "day": "Sunday",
+      "month": 3,
+      "puzzle_number": 994,
+      "difficulty_score": 2.0,
+      "max_score": 5
+    },
+    {
+      "date": "2/27/2026",
+      "puzzle_date": "2/28/2026",
+      "day": "Saturday",
+      "month": 2,
+      "puzzle_number": 993,
+      "difficulty_score": 2.8,
+      "max_score": 5
+    },
+    {
+      "date": "2/26/2026",
+      "puzzle_date": "2/27/2026",
+      "day": "Friday",
+      "month": 2,
+      "puzzle_number": 992,
+      "difficulty_score": 2.0,
+      "max_score": 5
+    },
+    {
+      "date": "2/25/2026",
+      "puzzle_date": "2/26/2026",
+      "day": "Thursday",
+      "month": 2,
+      "puzzle_number": 991,
+      "difficulty_score": 2.3,
+      "max_score": 5
+    },
+    {
       "date": "2/24/2026",
       "puzzle_date": "2/25/2026",
       "day": "Wednesday",
       "month": 2,
       "puzzle_number": 990,
       "difficulty_score": 2.3,
+      "max_score": 5
+    },
+    {
+      "date": "2/23/2026",
+      "puzzle_date": "2/24/2026",
+      "day": "Tuesday",
+      "month": 2,
+      "puzzle_number": 989,
+      "difficulty_score": 2.3,
+      "max_score": 5
+    },
+    {
+      "date": "2/22/2026",
+      "puzzle_date": "2/23/2026",
+      "day": "Monday",
+      "month": 2,
+      "puzzle_number": 988,
+      "difficulty_score": 1.5,
+      "max_score": 5
+    },
+    {
+      "date": "2/21/2026",
+      "puzzle_date": "2/22/2026",
+      "day": "Sunday",
+      "month": 2,
+      "puzzle_number": 987,
+      "difficulty_score": 3.0,
+      "max_score": 5
+    },
+    {
+      "date": "2/20/2026",
+      "puzzle_date": "2/21/2026",
+      "day": "Saturday",
+      "month": 2,
+      "puzzle_number": 986,
+      "difficulty_score": 1.8,
       "max_score": 5
     },
     {
@@ -52,6 +133,24 @@
       "month": 2,
       "puzzle_number": 982,
       "difficulty_score": 2.8,
+      "max_score": 5
+    },
+    {
+      "date": "2/15/2026",
+      "puzzle_date": "2/16/2026",
+      "day": "Monday",
+      "month": 2,
+      "puzzle_number": 981,
+      "difficulty_score": 3.0,
+      "max_score": 5
+    },
+    {
+      "date": "2/14/2026",
+      "puzzle_date": "2/15/2026",
+      "day": "Sunday",
+      "month": 2,
+      "puzzle_number": 980,
+      "difficulty_score": 2.3,
       "max_score": 5
     },
     {
@@ -100,12 +199,39 @@
       "max_score": 5
     },
     {
+      "date": "2/8/2026",
+      "puzzle_date": "2/9/2026",
+      "day": "Monday",
+      "month": 2,
+      "puzzle_number": 974,
+      "difficulty_score": 2.3,
+      "max_score": 5
+    },
+    {
+      "date": "2/7/2026",
+      "puzzle_date": "2/8/2026",
+      "day": "Sunday",
+      "month": 2,
+      "puzzle_number": 973,
+      "difficulty_score": 2.0,
+      "max_score": 5
+    },
+    {
       "date": "2/5/2026",
       "puzzle_date": "2/6/2026",
       "day": "Friday",
       "month": 2,
       "puzzle_number": 971,
       "difficulty_score": 2.5,
+      "max_score": 5
+    },
+    {
+      "date": "2/4/2026",
+      "puzzle_date": "2/5/2026",
+      "day": "Thursday",
+      "month": 2,
+      "puzzle_number": 970,
+      "difficulty_score": 1.5,
       "max_score": 5
     },
     {
@@ -127,11 +253,227 @@
       "max_score": 5
     },
     {
+      "date": "2/1/2026",
+      "puzzle_date": "2/2/2026",
+      "day": "Monday",
+      "month": 2,
+      "puzzle_number": 967,
+      "difficulty_score": 2.5,
+      "max_score": 5
+    },
+    {
+      "date": "1/31/2026",
+      "puzzle_date": "2/1/2026",
+      "day": "Sunday",
+      "month": 2,
+      "puzzle_number": 966,
+      "difficulty_score": 2.5,
+      "max_score": 5
+    },
+    {
       "date": "1/30/2026",
       "puzzle_date": "1/31/2026",
       "day": "Saturday",
       "month": 1,
       "puzzle_number": 965,
+      "difficulty_score": 2.8,
+      "max_score": 5
+    },
+    {
+      "date": "1/29/2026",
+      "puzzle_date": "1/30/2026",
+      "day": "Friday",
+      "month": 1,
+      "puzzle_number": 964,
+      "difficulty_score": 2.0,
+      "max_score": 5
+    },
+    {
+      "date": "1/28/2026",
+      "puzzle_date": "1/29/2026",
+      "day": "Thursday",
+      "month": 1,
+      "puzzle_number": 963,
+      "difficulty_score": 2.3,
+      "max_score": 5
+    },
+    {
+      "date": "1/27/2026",
+      "puzzle_date": "1/28/2026",
+      "day": "Wednesday",
+      "month": 1,
+      "puzzle_number": 962,
+      "difficulty_score": 2.3,
+      "max_score": 5
+    },
+    {
+      "date": "1/26/2026",
+      "puzzle_date": "1/27/2026",
+      "day": "Tuesday",
+      "month": 1,
+      "puzzle_number": 961,
+      "difficulty_score": 2.8,
+      "max_score": 5
+    },
+    {
+      "date": "1/25/2026",
+      "puzzle_date": "1/26/2026",
+      "day": "Monday",
+      "month": 1,
+      "puzzle_number": 960,
+      "difficulty_score": 3.3,
+      "max_score": 5
+    },
+    {
+      "date": "1/23/2026",
+      "puzzle_date": "1/24/2026",
+      "day": "Saturday",
+      "month": 1,
+      "puzzle_number": 958,
+      "difficulty_score": 2.8,
+      "max_score": 5
+    },
+    {
+      "date": "1/22/2026",
+      "puzzle_date": "1/23/2026",
+      "day": "Friday",
+      "month": 1,
+      "puzzle_number": 957,
+      "difficulty_score": 3.0,
+      "max_score": 5
+    },
+    {
+      "date": "1/21/2026",
+      "puzzle_date": "1/22/2026",
+      "day": "Thursday",
+      "month": 1,
+      "puzzle_number": 956,
+      "difficulty_score": 2.0,
+      "max_score": 5
+    },
+    {
+      "date": "1/20/2026",
+      "puzzle_date": "1/21/2026",
+      "day": "Wednesday",
+      "month": 1,
+      "puzzle_number": 955,
+      "difficulty_score": 2.3,
+      "max_score": 5
+    },
+    {
+      "date": "1/17/2026",
+      "puzzle_date": "1/18/2026",
+      "day": "Sunday",
+      "month": 1,
+      "puzzle_number": 952,
+      "difficulty_score": 1.7,
+      "max_score": 5
+    },
+    {
+      "date": "1/16/2026",
+      "puzzle_date": "1/17/2026",
+      "day": "Saturday",
+      "month": 1,
+      "puzzle_number": 951,
+      "difficulty_score": 2.0,
+      "max_score": 5
+    },
+    {
+      "date": "1/14/2026",
+      "puzzle_date": "1/15/2026",
+      "day": "Thursday",
+      "month": 1,
+      "puzzle_number": 949,
+      "difficulty_score": 1.7,
+      "max_score": 5
+    },
+    {
+      "date": "1/13/2026",
+      "puzzle_date": "1/14/2026",
+      "day": "Wednesday",
+      "month": 1,
+      "puzzle_number": 948,
+      "difficulty_score": 2.0,
+      "max_score": 5
+    },
+    {
+      "date": "1/12/2026",
+      "puzzle_date": "1/13/2026",
+      "day": "Tuesday",
+      "month": 1,
+      "puzzle_number": 947,
+      "difficulty_score": 2.0,
+      "max_score": 5
+    },
+    {
+      "date": "1/11/2026",
+      "puzzle_date": "1/12/2026",
+      "day": "Monday",
+      "month": 1,
+      "puzzle_number": 946,
+      "difficulty_score": 1.7,
+      "max_score": 5
+    },
+    {
+      "date": "1/10/2026",
+      "puzzle_date": "1/11/2026",
+      "day": "Sunday",
+      "month": 1,
+      "puzzle_number": 945,
+      "difficulty_score": 2.0,
+      "max_score": 5
+    },
+    {
+      "date": "1/9/2026",
+      "puzzle_date": "1/10/2026",
+      "day": "Saturday",
+      "month": 1,
+      "puzzle_number": 944,
+      "difficulty_score": 2.3,
+      "max_score": 5
+    },
+    {
+      "date": "1/8/2026",
+      "puzzle_date": "1/9/2026",
+      "day": "Friday",
+      "month": 1,
+      "puzzle_number": 943,
+      "difficulty_score": 2.8,
+      "max_score": 5
+    },
+    {
+      "date": "1/5/2026",
+      "puzzle_date": "1/6/2026",
+      "day": "Tuesday",
+      "month": 1,
+      "puzzle_number": 940,
+      "difficulty_score": 2.0,
+      "max_score": 5
+    },
+    {
+      "date": "1/4/2026",
+      "puzzle_date": "1/5/2026",
+      "day": "Monday",
+      "month": 1,
+      "puzzle_number": 939,
+      "difficulty_score": 2.0,
+      "max_score": 5
+    },
+    {
+      "date": "1/3/2026",
+      "puzzle_date": "1/4/2026",
+      "day": "Sunday",
+      "month": 1,
+      "puzzle_number": 938,
+      "difficulty_score": 0.5,
+      "max_score": 5
+    },
+    {
+      "date": "1/2/2026",
+      "puzzle_date": "1/3/2026",
+      "day": "Saturday",
+      "month": 1,
+      "puzzle_number": 937,
       "difficulty_score": 2.8,
       "max_score": 5
     },
@@ -3306,7 +3648,7 @@
   ],
   "metadata": {
     "last_updated": "2026-03-02",
-    "total_puzzles": 367,
+    "total_puzzles": 405,
     "source": "Connections Game Difficulty Data"
   }
 }
