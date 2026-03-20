@@ -1,6 +1,15 @@
 {
   "puzzles": [
     {
+      "date": "3/20/2026",
+      "puzzle_date": "3/21/2026",
+      "day": "Saturday",
+      "month": 3,
+      "puzzle_number": 1014,
+      "difficulty_score": 2.3,
+      "max_score": 5
+    },
+    {
       "date": "3/19/2026",
       "puzzle_date": "3/20/2026",
       "day": "Friday",
@@ -26,19 +35,10 @@
       "puzzle_number": 1011,
       "difficulty_score": 3.0,
       "max_score": 5
-    },
-    {
-      "date": "3/16/2026",
-      "puzzle_date": "3/17/2026",
-      "day": "Tuesday",
-      "month": 3,
-      "puzzle_number": 1010,
-      "difficulty_score": 2.5,
-      "max_score": 5
     }
   ],
   "metadata": {
-    "last_updated": "2026-03-19",
+    "last_updated": "2026-03-20",
     "total_puzzles": 4,
     "source": "Connections Game Difficulty Data"
   }
