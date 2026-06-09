@@ -1,6 +1,15 @@
 {
   "puzzles": [
     {
+      "date": "6/9/2026",
+      "puzzle_date": "6/10/2026",
+      "day": "Wednesday",
+      "month": 6,
+      "puzzle_number": 1095,
+      "difficulty_score": 1.5,
+      "max_score": 5
+    },
+    {
       "date": "6/8/2026",
       "puzzle_date": "6/9/2026",
       "day": "Tuesday",
@@ -25,15 +34,6 @@
       "month": 6,
       "puzzle_number": 1091,
       "difficulty_score": 2.5,
-      "max_score": 5
-    },
-    {
-      "date": "6/4/2026",
-      "puzzle_date": "6/5/2026",
-      "day": "Friday",
-      "month": 6,
-      "puzzle_number": 1090,
-      "difficulty_score": 1.8,
       "max_score": 5
     }
   ],
