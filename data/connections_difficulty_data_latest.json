@@ -1,17 +1,17 @@
 {
   "puzzles": [
     {
-      "date": "7/20/2026",
-      "puzzle_date": "7/21/2026",
-      "day": "Tuesday",
+      "date": "7/22/2026",
+      "puzzle_date": "7/23/2026",
+      "day": "Thursday",
       "month": 7,
-      "puzzle_number": 1136,
-      "difficulty_score": 1.8,
+      "puzzle_number": 1138,
+      "difficulty_score": 2.0,
       "max_score": 5
     }
   ],
   "metadata": {
-    "last_updated": "2026-07-20",
+    "last_updated": "2026-07-22",
     "total_puzzles": 1,
     "source": "Connections Game Difficulty Data"
   }
