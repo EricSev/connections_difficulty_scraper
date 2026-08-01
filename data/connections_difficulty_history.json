@@ -1,6 +1,15 @@
 {
   "puzzles": [
     {
+      "date": "8/1/2026",
+      "puzzle_date": "8/2/2026",
+      "day": "Sunday",
+      "month": 8,
+      "puzzle_number": 1148,
+      "difficulty_score": 2.5,
+      "max_score": 5
+    },
+    {
       "date": "7/31/2026",
       "puzzle_date": "8/1/2026",
       "day": "Saturday",
@@ -4718,8 +4727,8 @@
     }
   ],
   "metadata": {
-    "last_updated": "2026-07-31",
-    "total_puzzles": 524,
+    "last_updated": "2026-08-01",
+    "total_puzzles": 525,
     "source": "Connections Game Difficulty Data"
   }
 }
