@@ -1,6 +1,15 @@
 {
   "puzzles": [
     {
+      "date": "10/14/2026",
+      "puzzle_date": "10/15/2026",
+      "day": "Thursday",
+      "month": 10,
+      "puzzle_number": 1222,
+      "difficulty_score": 2.5,
+      "max_score": 5
+    },
+    {
       "date": "10/13/2026",
       "puzzle_date": "10/14/2026",
       "day": "Wednesday",
@@ -4952,8 +4961,8 @@
     }
   ],
   "metadata": {
-    "last_updated": "2026-10-13",
-    "total_puzzles": 550,
+    "last_updated": "2026-10-14",
+    "total_puzzles": 551,
     "source": "Connections Game Difficulty Data"
   }
 }
